@@ -40,7 +40,7 @@ AND de.to_date = '9999-01-01' ORDER BY e.last_name, e.first_name LIMIT %d OFFSET
 - utilisation de === et !==
 - SUM(e.gender = 'M')
 - la logique de la fonction make_manager
-
+- $today 
 
 
 
