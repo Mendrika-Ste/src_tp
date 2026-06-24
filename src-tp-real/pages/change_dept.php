@@ -36,7 +36,7 @@
         <link rel="stylesheet" href="../design/theme-dark/style.css">
     </head>
     <body>
-    <nav class="navbar"><p><a href="fiche.php?emp_no=<?= urlencode($emp_no) ?>">&larr; Retour à la fiche</a></p></nav>
+    <nav class="navbar"><p><a class="btn btn-secondary" href="fiche.php?emp_no=<?= urlencode($emp_no) ?>">&larr; Retour à la fiche</a></p></nav>
     <div class="container">
     <?php if (!$employee) { ?>
         <h1>Employé introuvable</h1>

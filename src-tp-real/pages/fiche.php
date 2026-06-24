@@ -20,7 +20,7 @@
     </head>
     <body>
     <div class="container">
-    <nav class="navbar"><p><a href="javascript:history.back()">&larr; Retour</a></p></nav>
+    <nav class="navbar"><p><a class="btn btn-secondary" href="javascript:history.back()">&larr; Retour</a></p></nav>
 
     <?php if (!$employee) { ?>
         <h1>Employé introuvable</h1>

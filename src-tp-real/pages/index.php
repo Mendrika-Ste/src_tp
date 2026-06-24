@@ -13,10 +13,10 @@
     <div class="container">
     <nav class="navbar">
     <ul>
-    <li><a href="search.php">🔍 Rechercher un employé</a></li>
-    <li><a href="stats.php">📊 Statistiques par emploi</a></li>
-    <li><a href="dept_form.php">➕ Ajouter un département</a></li>
-    <li><a href="emp_form.php">➕ Ajouter un employé</a></li>
+    <li><a class="btn btn-secondary" href="search.php">🔍 Rechercher un employé</a></li>
+    <li><a class="btn btn-secondary" href="stats.php">📊 Statistiques par emploi</a></li>
+    <li><a class="btn btn-secondary" href="dept_form.php">➕ Ajouter un département</a></li>
+    <li><a class="btn btn-secondary" href="emp_form.php">➕ Ajouter un employé</a></li>
     <li></li>
     </ul>
     </nav>
@@ -39,7 +39,7 @@
         </tr>
     <?php } ?>
     </table>
-    <a href="tri_dept.php"><input class="btn" type="submit" value="Triage par ordre croissant"></a>
+    <a href="tri_dept.php"><input class="btn btn-secondary" type="submit" value="Triage par ordre croissant"></a>
     </div>
     </body>
 </html>

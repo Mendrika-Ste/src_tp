@@ -30,7 +30,7 @@
     <body>
     
     <div class="container">
-    <nav class="navbar"><p><a href="index.php">&larr; Retour aux départements</a></p></nav>
+    <nav class="navbar"><p><a class="btn btn-secondary" href="index.php">&larr; Retour aux départements</a></p></nav>
     <?php if (!$department) { ?>
         <h1>Département introuvable</h1>
     <?php } else { ?>
