@@ -5,12 +5,15 @@
 <html>
     <head>
         <title>Statistiques par emploi</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../design/theme-dark/style.css">
     </head>
     <body>
-    <p><a href="index.php">&larr; Retour aux départements</a></p>
+    
+    <div class="container">
+    <nav class="navbar"><p><a href="index.php">&larr; Retour aux départements</a></p></nav>
     <h1>Statistiques par emploi</h1>
-
-    <table border="1">
+    <table class="table" border="1">
         <tr>
             <th>Emploi</th>
             <th>Hommes</th>
@@ -28,5 +31,6 @@
             </tr>
         <?php } ?>
     </table>
+    </div>
     </body>
 </html>

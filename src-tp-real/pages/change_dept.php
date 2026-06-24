@@ -32,10 +32,12 @@
 <html>
     <head>
         <title>Changer de département</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../design/theme-dark/style.css">
     </head>
     <body>
-    <p><a href="fiche.php?emp_no=<?= urlencode($emp_no) ?>">&larr; Retour à la fiche</a></p>
-
+    <nav class="navbar"><p><a href="fiche.php?emp_no=<?= urlencode($emp_no) ?>">&larr; Retour à la fiche</a></p></nav>
+    <div class="container">
     <?php if (!$employee) { ?>
         <h1>Employé introuvable</h1>
     <?php } else { ?>
@@ -65,8 +67,9 @@
                 </select>
             </p>
             <p>Date de début : <input type="date" name="from_date"></p>
-            <p><input type="submit" value="Changer de département"></p>
+            <p><input class="btn" type="submit" value="Changer de département"></p>
         </form>
     <?php } ?>
+    </div>
     </body>
 </html>

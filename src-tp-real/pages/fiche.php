@@ -15,24 +15,31 @@
 <html>
     <head>
         <title>Fiche employé</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../design/theme-dark/style.css">
     </head>
     <body>
-    <p><a href="javascript:history.back()">&larr; Retour</a></p>
+    <div class="container">
+    <nav class="navbar"><p><a href="javascript:history.back()">&larr; Retour</a></p></nav>
 
     <?php if (!$employee) { ?>
         <h1>Employé introuvable</h1>
     <?php } else { ?>
         <h1><?= $employee['first_name'] ?> <?= $employee['last_name'] ?></h1>
-        <p><a href="change_dept.php?emp_no=<?= urlencode($employee['emp_no']) ?>">
-            <button type="button">Changer de département</button>
-        </a></p>
-        <p><a href="become_manager.php?emp_no=<?= urlencode($employee['emp_no']) ?>">
-            <button type="button">Devenir Manager</button>
-        </a></p>
-        <p><a href="emp_form.php?emp_no=<?= urlencode($employee['emp_no']) ?>">
-            <button type="button">Modifier l'employé</button>
-        </a></p>
-        <table border="1">
+        <nav class="navbar">
+        <ul>
+        <li><a href="change_dept.php?emp_no=<?= urlencode($employee['emp_no']) ?>">
+            <button class="btn" type="button">Changer de département</button>
+        </a></li>
+        <li><a href="become_manager.php?emp_no=<?= urlencode($employee['emp_no']) ?>">
+            <button class="btn" type="button">Devenir Manager</button>
+        </a></li>
+        <li><a href="emp_form.php?emp_no=<?= urlencode($employee['emp_no']) ?>">
+            <button class="btn" type="button">Modifier l'employé</button>
+        </a></li>
+        </ul>
+        </nav>
+        <table class="table" border="1">
             <tr><th>N°</th>              <td><?= $employee['emp_no'] ?></td></tr>
             <tr><th>Prénom</th>          <td><?= $employee['first_name'] ?></td></tr>
             <tr><th>Nom</th>             <td><?= $employee['last_name'] ?></td></tr>
@@ -55,7 +62,7 @@
         </table>
 
         <h2>Historique des emplois</h2>
-        <table border="1">
+        <table class="table" border="1">
             <tr>
                 <th>Poste</th>
                 <th>Du</th>
@@ -71,7 +78,7 @@
         </table>
 
         <h2>Historique des salaires</h2>
-        <table border="1">
+        <table class="table" border="1">
             <tr>
                 <th>Salaire</th>
                 <th>Du</th>
@@ -86,5 +93,6 @@
             <?php } ?>
         </table>
     <?php } ?>
+    </div>
     </body>
 </html>

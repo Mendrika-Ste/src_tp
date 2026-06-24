@@ -29,10 +29,12 @@
 <html>
     <head>
         <title>Devenir manager</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../design/theme-dark/style.css">
     </head>
     <body>
-    <p><a href="fiche.php?emp_no=<?= urlencode($emp_no) ?>">&larr; Retour à la fiche</a></p>
-
+    <nav class="navbar"><p><a href="fiche.php?emp_no=<?= urlencode($emp_no) ?>">&larr; Retour à la fiche</a></p></nav>
+    <div class="container">
     <?php if (!$employee) { ?>
         <h1>Employé introuvable</h1>
     <?php } elseif (!$current_dept) { ?>
@@ -55,8 +57,9 @@
 
         <form method="post" action="become_manager.php?emp_no=<?= urlencode($emp_no) ?>">
             <p>Date de début : <input type="date" name="from_date"></p>
-            <p><input type="submit" value="Devenir manager"></p>
+            <p><input class="btn" type="submit" value="Devenir manager"></p>
         </form>
     <?php } ?>
+    </div>
     </body>
 </html>

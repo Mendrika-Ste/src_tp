@@ -2,21 +2,25 @@
     include('../inc/functions.php');
     $departments = get_all_departments();
 
-?>	
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+?>		
+<html>
+    <head>
         <title>Les news</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../design/theme-dark/style.css">
     </head>
     <body>
+    <div class="container">
+    <nav class="navbar">
+    <ul>
+    <li><a href="search.php">🔍 Rechercher un employé</a></li>
+    <li><a href="stats.php">📊 Statistiques par emploi</a></li>
+    <li><a href="dept_form.php">➕ Ajouter un département</a></li>
+    <li><a href="emp_form.php">➕ Ajouter un employé</a></li>
+    </ul>
+    </nav>
     <h1>Liste des départements</h1>
-    <p><a href="search.php">🔍 Rechercher un employé</a></p>
-    <p><a href="stats.php">📊 Statistiques par emploi</a></p>
-    <p><a href="dept_form.php">➕ Ajouter un département</a></p>
-    <p><a href="emp_form.php">➕ Ajouter un employé</a></p>
- <table border="1">
+ <table class="table" border="1">
     <tr>
         <th>Department Number</th>
         <th>Department Name</th>
@@ -34,6 +38,6 @@
         </tr>
     <?php } ?>
     </table>
-
+    </div>
     </body>
 </html>
