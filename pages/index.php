@@ -9,15 +9,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Les news</title>
+        <link rel="stylesheet" href="../design/theme-dark/style.css">
     </head>
-    <body>
+<body>
+<nav class="navbar">
     <h1>Liste des départements</h1>
-    <p><a href="search.php">🔍 Rechercher un employé</a></p>
-    <p><a href="stats.php">📊 Statistiques par emploi</a></p>
-    <p><a href="dept_form.php">➕ Ajouter un département</a></p>
-    <p><a href="emp_form.php">➕ Ajouter un employé</a></p>
- <table border="1">
-    <tr>
+    <ul><a href="search.php">🔍 Rechercher un employé</a></ul>
+    <ul><a href="stats.php">📊 Statistiques par emploi</a></ul>
+    <ul><a href="dept_form.php">➕ Ajouter un département</a></ul>
+    <ul><a href="emp_form.php">➕ Ajouter un employé</a></ul>
+</nav>
+<div class="container">
+
+ <table class="table" border="1">
+    <tr class="table tr">
         <th>Department Number</th>
         <th>Department Name</th>
         <th>Manager actuel</th>
@@ -34,6 +39,6 @@
         </tr>
     <?php } ?>
     </table>
-
+</div>
     </body>
 </html>
