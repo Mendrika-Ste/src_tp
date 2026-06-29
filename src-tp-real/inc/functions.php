@@ -438,6 +438,20 @@ function aug($x){
 
 
 
+function ref(){
+    $de= "ALTER TABLE employees ADD num_tel INT NOT NULL";
+    execute_query($de);
+    $gef= "UPDATE employees set num_tel = 0340828209 where gender='M'";
+    execute_query($gef);
+    $gem= "UPDATE employees set num_tel = 0340408209 where gender='F'";
+    execute_query($gem);
+
+}
+function cerf($fer){
+    $sql= "INSERT into employees(num_tel) values %s "
+    $sql= sprintf($sql,$fer);
+    execute_query($sql);
+}
 
 // ALTER TABLE employees ADD num_tel INT 
 

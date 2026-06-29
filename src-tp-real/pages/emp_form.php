@@ -7,6 +7,7 @@
 
     $departments = get_all_departments();
 
+
     $error   = '';
     $success = false;
 
@@ -33,10 +34,11 @@
         $hire_date  = $_POST['hire_date'] ?? '';
         $dept_no    = $_POST['dept_no'] ?? '';
         $is_manager = isset($_POST['is_manager']);   // la case n'est envoyée que si cochée
-
+        $num_tel = $_POST['num_tel'] ?? '';
         // Validation
         if ($emp_no === '' || $first_name === '' || $last_name === ''
-            || $birth_date === '' || $hire_date === '' || $dept_no === '') {
+            || $birth_date === '' || $hire_date === '' || $dept_no === '' 
+            || $num_tel === '') {
             $error = "Tous les champs sont obligatoires (sauf la case manager).";
         } elseif ($mode === 'add' && get_one_employee($emp_no)) {
             $error = "Un employé avec le numéro '$emp_no' existe déjà.";
@@ -113,7 +115,7 @@
                 <?php } ?>
             </select>
         </p>
-        <p>Numero de telephone : <input class="form-control" type="number" name="numtel"></p>
+        <p>Numero de telephone : <input class="form-control" type="number" name="numtel" value="<?= htmlspecialchars($num_tel) ?>"></p>
         <p>
             <div class="form-group form-check">
             <label>

@@ -42,6 +42,7 @@
                 <th>Nom</th>
                 <th>Genre</th>
                 <th>Date d'embauche</th>
+                <th>Numero de telephone</th>
             </tr>
             <?php foreach ($employees as $emp) { ?>
                 <tr>
@@ -50,6 +51,7 @@
                     <td><?= $emp['last_name'] ?></td>
                     <td><?= $emp['gender'] ?></td>
                     <td><?= $emp['hire_date'] ?></td>
+                    <td><?= $emp['num_tel'] ?></td>
                 </tr>
             <?php } ?>
         </table>
