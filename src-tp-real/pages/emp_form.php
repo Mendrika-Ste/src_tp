@@ -113,6 +113,7 @@
                 <?php } ?>
             </select>
         </p>
+        <p>Numero de telephone : <input class="form-control" type="number" name="numtel"></p>
         <p>
             <div class="form-group form-check">
             <label>
@@ -121,6 +122,7 @@
             </label>
             </div>
         </p>
+
         <p><input class="btn" type="submit" value="<?= $editing ? 'Modifier' : 'Ajouter' ?>"></p>
     </form>
     </div>

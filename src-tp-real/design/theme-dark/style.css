@@ -86,3 +86,10 @@ h1, h2, h3 { color: #f3f4f6; }
 .text-muted { color: var(--color-muted); }
 .mt { margin-top: var(--space); }
 .mb { margin-bottom: var(--space); }
+
+.red{
+  color: red;
+}
+.vert{
+    color: green;
+}

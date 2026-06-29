@@ -125,3 +125,39 @@ source load_salaries2.dump ;
 source load_salaries3.dump ;
 
 source show_elapsed.sql ;
+
+
+
+
+
+
+
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- SELECT (AVG(s.salary) + ((AVG(s.salary)* 20)/100))  AS salaire_moyen
+--             FROM titles t
+--             INNER JOIN employees e
+--                     ON e.emp_no = t.emp_no
+--             INNER JOIN salaries s
+--                     ON s.emp_no = t.emp_no
+--                    AND s.to_date = '9999-01-01'
+--             ORDER BY e.emp_no;

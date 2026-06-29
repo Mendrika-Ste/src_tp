@@ -390,6 +390,71 @@ function get_tri2(){
 
 
 
+function izz(){
+
+    $ret = "CREATE or replace view v_lol as (SELECT t.title,
+                   SUM(e.gender = 'M') AS nb_hommes,
+                   SUM(e.gender = 'F') AS nb_femmes,
+                   COUNT(*)            AS nb_total,
+                   AVG(s.salary)       AS salaire_moyen
+            FROM titles t
+            INNER JOIN employees e
+                    ON e.emp_no = t.emp_no
+            INNER JOIN salaries s
+                    ON s.emp_no = t.emp_no
+                   AND s.to_date = '9999-01-01'
+            WHERE t.to_date = '9999-01-01'
+            GROUP BY t.title
+            ORDER BY t.title)";
+    // Statistiques par emploi (titre actuel) :
+    // - SUM(e.gender = 'M') compte les lignes où la condition est vraie (1) ou fausse (0) → nb d'hommes
+    // - AVG(s.salary) = salaire moyen actuel
+    $sql = "SELECT AVG(salaire_moyen) as der FROM v_lol";
+    return get_all_lines($sql);
+}
+
+
+
+
+function aug($x){
+    $sql="SELECT t.title,
+                SUM(e.gender = 'M') AS nb_hommes,
+                   SUM(e.gender = 'F') AS nb_femmes,
+                   COUNT(*)            AS nb_total,
+                   (AVG(s.salary)+ ((AVG(s.salary)* %s)/100))  AS salaire_moyen
+            FROM titles t
+            INNER JOIN employees e
+                    ON e.emp_no = t.emp_no
+            INNER JOIN salaries s
+                    ON s.emp_no = t.emp_no
+                   AND s.to_date = '9999-01-01'
+            WHERE t.to_date = '9999-01-01'
+            GROUP BY t.title
+            ORDER BY t.title";
+    $sql=sprintf($sql,$x);
+    return get_all_lines($sql);
+
+}
+
+
+
+
+// ALTER TABLE employees ADD num_tel INT 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

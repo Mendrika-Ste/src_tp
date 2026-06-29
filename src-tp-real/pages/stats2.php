@@ -1,7 +1,7 @@
 <?php
     include('../inc/functions.php');
-    $stats = get_jobs_stats();
-    $moysgen= izz();
+    $stats = aug($_GET['x']);
+   
 ?>
 <html>
     <head>
@@ -16,7 +16,7 @@
     <h1>Statistiques par emploi</h1>
     <table class="table" border="1">
         <tr>
-            <th class="red" >Emploi</th>
+            <th class="alert-success" >Emploi</th>
             <th>Hommes</th>
             <th>Femmes</th>
             <th>Total</th>
@@ -31,19 +31,7 @@
                 <td><?= $row['nb_hommes'] ?></td>
                 <td><?= $row['nb_femmes'] ?></td>
                 <td><?= $row['nb_total'] ?></td>
-                <td>
-                <?php
-
-                foreach($moysgen as $moy){
-                
-                if($moy['der'] <= $row['salaire_moyen']){
-                    ?>
-                <p class="alert-error" ><?= number_format($row['salaire_moyen'], 0, ',', ' ') ?> €</p>
-                <?php  } 
-                 else { ?>
-                <p class="alert-success"><?= number_format($row['salaire_moyen'], 0, ',', ' ') ?> €</p>
-                <?php } } ?>
-                </td>
+                <td><?= number_format($row['salaire_moyen'], 0, ',', ' ') ?> €</td>
             </tr>
         <?php } ?>
     </table>
