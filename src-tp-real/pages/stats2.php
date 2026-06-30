@@ -16,22 +16,16 @@
     <h1>Statistiques par emploi</h1>
     <table class="table" border="1">
         <tr>
-            <th class="alert-success" >Emploi</th>
-            <th>Hommes</th>
-            <th>Femmes</th>
-            <th>Total</th>
-            <th>Salaire moyen</th>
+            <th class="alert-success" >Employees</th>
+            <th class="alert-success" >Salaire + X%</th>
         </tr>
         <?php foreach ($stats as $row) {
 
             ?>
             
             <tr>
-                <td><?= $row['title'] ?></td>
-                <td><?= $row['nb_hommes'] ?></td>
-                <td><?= $row['nb_femmes'] ?></td>
-                <td><?= $row['nb_total'] ?></td>
-                <td><?= number_format($row['salaire_moyen'], 0, ',', ' ') ?> €</td>
+                <td><?= $row['nemp'] ?></td>
+                <td><?= number_format($row['salaire'], 0, ',', ' ') ?> €</td>
             </tr>
         <?php } ?>
     </table>

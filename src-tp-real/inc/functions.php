@@ -417,20 +417,12 @@ function izz(){
 
 
 function aug($x){
-    $sql="SELECT t.title,
-                SUM(e.gender = 'M') AS nb_hommes,
-                   SUM(e.gender = 'F') AS nb_femmes,
-                   COUNT(*)            AS nb_total,
-                   (AVG(s.salary)+ ((AVG(s.salary)* %s)/100))  AS salaire_moyen
-            FROM titles t
-            INNER JOIN employees e
-                    ON e.emp_no = t.emp_no
+    $sql="SELECT CONCAT(e.first_name, ' ', e.last_name) as nemp,(s.salary + ((s.salary* %s)/100))  as salaire
+            FROM employees e
             INNER JOIN salaries s
-                    ON s.emp_no = t.emp_no
-                   AND s.to_date = '9999-01-01'
-            WHERE t.to_date = '9999-01-01'
-            GROUP BY t.title
-            ORDER BY t.title";
+                    ON s.emp_no = e.emp_no
+            where s.to_date = '9999-01-01'
+            GROUP BY s.emp_no";
     $sql=sprintf($sql,$x);
     return get_all_lines($sql);
 
@@ -448,7 +440,7 @@ function ref(){
 
 }
 function cerf($fer){
-    $sql= "INSERT into employees(num_tel) values %s "
+    $sql= "INSERT into employees(num_tel) values %s ";
     $sql= sprintf($sql,$fer);
     execute_query($sql);
 }
